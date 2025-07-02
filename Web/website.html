@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="A sample Soccer HTML page" />
+    <meta name="author(Gka)" content="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let currentLang = "en";
+        let translations = {};
+
+        const loadLanguage = async (lang) => {
+            try {
+                const res = await fetch("mainpage.json");
+                translations = await res.json();
+                currentLang = lang;
+                updateTexts();
+            } catch (err) {
+                console.error('Error loading ${lang} translations:', err);
+            }
+        };
+
+        const updateTexts = () => {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[key]) el.textContent = translations[key];
+            });
+        };
+
+        function createButtonsIndividually() {
+            const container = document.getElementById("swap-lang");
+
+            // English Button
+            const enBtn = document.createElement("button");
+            enBtn.textContent = "English";
+            enBtn.dataset.lang = "en";
+            enBtn.classList.add("dynamic-btn");
+            enBtn.addEventListener("click", () => loadLanguage("en"));
+            container.appendChild(enBtn);
+
+            // Burmese Button
+            const myBtn = document.createElement("button");
+            myBtn.textContent = "မြန်မာ";
+            myBtn.dataset.lang = "my";
+            myBtn.classList.add("dynamic-btn");
+            myBtn.addEventListener("click", () => loadLanguage("my"));
+            container.appendChild(myBtn);
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            createButtonsIndividually();
+            loadLanguage("en");
+        });
+        // window.addEventListener("DOMContentLoaded", () => loadLanguage("en"));
+    </script>
+</head>
+
+<body>
+    <nav class="navbar" id="main-navbar">
+        <div class="type">
+            <img src="https://brandlogos.net/wp-content/uploads/2021/10/Premier-League-logo-symbol.png"
+                alt="" width="7%" id="logo">
+            <h1 data-i18n="logo">Premier League</h1>
+        </div>
+        <ul data-i18n="nav-list">
+            <li data-i18n="navlist1"><img
+                    src="https://www.logo.wine/a/logo/Manchester_United_F.C./Manchester_United_F.C.-Logo.wine.svg"
+                    alt="" width="35px" id="imglogo"><a href="manu.html">ManU</a></li>
+            <li data-i18n="navlist2"><img src="https://www.logo.wine/a/logo/Arsenal_F.C./Arsenal_F.C.-Logo.wine.svg"
+                    alt="" width="40px" id="imglogo"><a href="arsenal.html">Arsenal</a></li>
+            <li data-i18n="navlist3"><img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png"
+                    alt="" width="20px" id="imglogo2"><a href="liverpool.html">Liverpool</a></li>
+            <li data-i18n="navlist1]4"><img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png"
+                    alt="" width="20px" id="imglogo1"><a href="chelsea.html">Chelsea</a></li>
+            <li data-i18n="navlist5"><img
+                    src="https://www.logo.wine/a/logo/Manchester_City_F.C./Manchester_City_F.C.-Logo.wine.svg" alt=""
+                    width="40px" id="imglogo"><a href="mancity.html">ManCity</a></li>
+        </ul>
+        <div class="swap-lang" id="swap-lang"></div>
+    </nav>
+    <div class="container">
+        <div class="liverpool-trophies">
+            <div><img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png"
+                    alt="" width="115px"></div>
+            <div>
+                <h2>Liverpool FC</h2>
+                <p id="liverpool">
+                    Founded year ----- 1892 <br>
+                    First Major Trophy ----- 1901(League Title) <br>
+                    PL Titles ----- 2 times <br>
+                    UCL ----- 2005, 2019 <br>
+                    Treble ----- In 2001<br>
+                    Total Major Trophies --- 68 times
+                </p>
+            </div>
+        </div>
+        <div class="manu-trophies">
+            <div>
+                <h2>Manchester United FC</h2>
+                <p id="manu">
+                    Founded year ----- 1892 <br>
+                    First Major Trophy ----- 1901(League Title) <br>
+                    PL Titles ----- 13 times <br>
+                    UCL ----- <br>
+                    Treble ----- In 1999<br>
+                    Total Major Trophies --- 66 times
+                </p>
+            </div>
+            <div><img src="https://www.logo.wine/a/logo/Manchester_United_F.C./Manchester_United_F.C.-Logo.wine.svg"
+                    alt="" width="250px"></div>
+        </div>
+        <div class="arsenal-trophies">
+            <div>
+                <h2>Arsenal FC</h2>
+                <p id="arsenal">
+                    Founded year ----- 1892 <br>
+                    First Major Trophy ----- 1901(FA Cup) <br>
+                    PL Titles ----- 3 times<br>
+                    Dominant ----- 1930s <br>
+                    Double ----- In 1971 <br>
+                    Invicible ----- In 2004 <br>
+                    Total Major Trophies --- 48 times
+                </p>
+            </div>
+            <div><img src="https://www.logo.wine/a/logo/Arsenal_F.C./Arsenal_F.C.-Logo.wine.svg" alt="" width="270px">
+            </div>
+        </div>
+        <div class="mancity-trophies">
+            <div><img src="https://www.logo.wine/a/logo/Manchester_City_F.C./Manchester_City_F.C.-Logo.wine.svg" alt=""
+                    width="250px"></div>
+            <div>
+                <h2>Mancity FC</h2>
+                <p id="mancity">
+                    Founded year ----- 1892 <br>
+                    First Major Trophy ----- 1901(FA Cup) <br>
+                    PL Titles ----- 8 times <br>
+                    UCL ----- 2023 <br>
+                    Treble ----- In 2023 <br>
+                    Club World Cup ----- 2024 <br>
+                    Super Cup ----- 2025 <br>
+                    Total Major Trophies --- 44 times
+                </p>
+            </div>
+        </div>
+        <div class="chelsea-trophies">
+            <div>
+                <h2>Chelsea FC</h2>
+                <p id="chelsea">
+                    Founded year ----- 1892 <br>
+                    First Major Trophy ----- 1901(League Title) <br>
+                    PL Titles ----- 5 times <br>
+                    UCL ----- 2012 & 2021 <br>
+                    Conference League ----- In 2025 <br>
+                    Total Major Trophies --- 35 times
+                </p>
+            </div>
+            <div><img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png"
+                    alt="" width="130px"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer_p1">
+            <div class="logo-type">
+                <img src="https://pngdownload.io/wp-content/uploads/2023/12/Premier-League-Logo-PNG-Iconic-English-Football-Emblem-Transparent-jpg.webp"
+                    alt="" width="30px" id="footer_logo">
+                <h3>Premier League</h3>
+            </div>
+            <div class="image-group">
+                <img src="https://th.bing.com/th/id/OIP.3yLsbW3kJ5zU9-957TR_mQHaHa?w=169&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                    alt="" width="40px" id="img">
+                <img src="https://th.bing.com/th/id/OIP.ABYI09Y_5S9ciXz7f9QVjgHaHY?w=197&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="" width="27px" id="img">
+                <img src="https://th.bing.com/th/id/OIP.y2YhAjjLU9wpKL5HSS8H0QHaGK?w=231&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                    alt="" width="30px" id="img">
+                <img src="https://th.bing.com/th/id/OIP.VV4I6aCzLV2vXjyGudPTQgHaHa?w=183&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                    alt="" width="35px" id="img">
+            </div>
+        </div>
+        <hr>
+        <div class="footer_p2 container py-3">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+                <div class="">
+                    <p class="mb-3">Watch latest news & player Transfer of your favourite team and Feel exciting from
+                    <mark><em><a href="https://www.premierleague.com">Premier League</a></em></mark> cuz of Passion, Glory and intense Competition</p>
+                </div>
+                <div class="store-image d-flex gap-2 mb-3">
+                    <img src="https://logodix.com/logo/27989.jpg" alt="Play Store" style="height: 40px;">
+                    <img src="https://logodix.com/logo/27900.png" alt="App Store" style="height: 40px;">
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

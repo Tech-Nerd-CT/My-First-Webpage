@@ -1,0 +1,26 @@
+{
+    "en": {
+        "nav": {
+            "logo": "Premier League",
+            "nav-list": {
+                "navlist1": "ManU",
+                "navlist2": "Arsenal",
+                "navlist3": "Liverpool",
+                "navlist4": "Chelsea",
+                "navlist5": "ManCity"
+            }
+        }
+    },
+    "my": {
+        "nav": {
+            "logo": "ပရီးမီးယားလိ‌ဂ်",
+            "nav-list": {
+                "navlist1": "မန်ယူ",
+                "navlist2": "အာဆင်နယ်လ်",
+                "navlist3": "လစ်ပါပူးလ်",
+                "navlist4": "ချယ်လ်ဆီး",
+                "navlist5": "မန်စီးတီး"
+            }
+        }
+    }
+}

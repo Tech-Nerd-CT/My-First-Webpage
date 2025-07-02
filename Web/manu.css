@@ -1,0 +1,128 @@
+/* Reset some default styles */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aquamarine; /* Premier League color tone */
+  padding: 10px 30px;
+  font-family: Arial, sans-serif;
+}
+
+.type {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#logo {
+  width: 50px;
+  height: auto;
+}
+
+.type h1 {
+  color: rgb(42, 71, 239);
+  font-size: 24px;
+  margin: 0;
+}
+
+ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  align-items: center;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: navy;
+  font-weight: bold;
+  transition: underline 0.3s ease;
+}
+
+ul li a:hover {
+  color: #ffd700; /* Golden effect on hover */
+  text-decoration: underline;
+}
+
+ul li img {
+  width: 25px;
+  height: auto;
+}
+
+#imglogo {
+    width: 30px;
+    height: 30px;
+}
+#imglogo1 {
+    width: 20px;
+    height: 20px;
+}
+#imglogo2 {
+    width: 20px;
+    height: 23px;
+}
+.subnavbar {
+    display: flex;
+    justify-content: space-between;
+}
+.body {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+.footer_p1 {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-type {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(209, 240, 9);
+}
+.logo-type h3 {
+    padding-right: 30px;
+}
+/* #footer_logo { 
+    align-self: center;
+    margin-top: 10px;
+} */
+.image-group {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.footer_p2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: nowrap;
+    background-color: rgb(200, 157, 157);
+}
+.store-image {
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-inner img {
+    height: 1500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
